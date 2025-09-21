@@ -1,0 +1,172 @@
+@use '../global' as *;
+
+.custom-footer {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+  padding: 0 0;
+
+  &__bg {
+    position: relative;
+    width: 100%;
+    padding: 4rem 0 4rem;
+    background-image: url('./footer-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include tab-up {
+      padding: 6.4rem 0 4rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(var(--color-foreground), 0.7),
+        rgba(var(--color-foreground), 0.9)
+      );
+    }
+  }
+
+  &__bg-inner {
+    position: relative;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 2rem;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include pc-up {
+      flex-direction: row;
+    }
+  }
+
+  &__logo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tab-up {
+      align-items: flex-start;
+    }
+  }
+
+  &__logo {
+    width: 22rem;
+    height: auto;
+    display: block;
+
+    @include tab-up {
+      width: 24rem;
+    }
+  }
+
+  &__logo-sub-text {
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+
+    @include tab-up {
+      font-size: 1.5rem;
+    }
+
+    small {
+      font-size: 1.1rem;
+      opacity: 0.7;
+      letter-spacing: 0;
+
+      @include tab-up {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__nav {
+    margin-top: 2.4rem;
+
+    @include pc-up {
+      margin-top: 0;
+    }
+  }
+
+  &__nav-cols {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+
+    @include tab-up {
+      grid-template-columns: repeat(3, auto);
+    }
+
+    @include pc-up {
+      gap: 6.4rem;
+      flex-direction: row;
+    }
+  }
+
+  &__nav-col {
+  }
+
+  &__nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  &__nav-item {
+  }
+
+  &__nav-link {
+    color: $c-white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+
+    @include tab-up {
+      font-size: 1.5rem;
+    }
+
+    @include hover {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__warning {
+    position: relative;
+    font-size: 1.1rem;
+    color: $c-white;
+    z-index: 1;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    opacity: 0.7;
+  }
+
+  &__copyright {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 1.2rem;
+    text-align: center;
+
+    p {
+      margin: 0;
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+    }
+  }
+}

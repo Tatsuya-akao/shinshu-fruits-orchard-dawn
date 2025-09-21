@@ -1,0 +1,8 @@
+@use "variables" as *;
+@forward "variables";
+@forward "mixins";
+
+
+.html {
+  font-family: $font-maru;
+}

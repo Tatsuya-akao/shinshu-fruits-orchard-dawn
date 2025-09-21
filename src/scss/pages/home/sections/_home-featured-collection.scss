@@ -1,0 +1,59 @@
+@use '../../../global' as *;
+
+.home-featured-collection {
+  padding: 8rem 0;
+  background-color: #f8f8f8;
+
+  @include tab-up {
+    padding: 16rem 0;
+  }
+
+  &__title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-bottom: 3.2rem;
+
+    @include tab-up {
+      gap: 2rem;
+      margin: 0 0 6.4rem;
+    }
+
+    img {
+      width: 3.8rem;
+      flex-shrink: 0;
+
+      @include tab-up {
+        width: 5rem;
+      }
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 2.2rem;
+      letter-spacing: 0.2em;
+      line-height: 1.5;
+      display: block;
+
+      @include tab-up {
+        font-size: 3.2rem;
+      }
+    }
+  }
+
+  &__btn-wrap {
+    margin: 4rem auto 0;
+    display: flex;
+    justify-content: center;
+
+    @include tab-up {
+      margin-top: 6.4rem;
+    }
+
+    .link-btn {
+      width: 25rem;
+    }
+  }
+}

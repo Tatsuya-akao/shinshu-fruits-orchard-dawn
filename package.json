@@ -1,0 +1,46 @@
+{
+  "name": "dawn",
+  "version": "1.0.0",
+  "description": "[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass src/scss/custom.scss assets/custom.css --style expanded --watch",
+    "compile:css": "sass src/scss/custom.scss assets/custom.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 2 versions ie >= 11' assets/custom.css -o assets/custom.css",
+    "compress:css": "sass assets/custom.css assets/custom.css --style compressed",
+    "build:css": "npm-run-all compile:css prefix:css compress:css",
+    "watch:js": "webpack --watch --mode development",
+    "build:js": "webpack --mode production",
+    "build": "npm-run-all build:css build:js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tatsuya-akao/dawn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tatsuya-akao/dawn/issues"
+  },
+  "homepage": "https://github.com/Tatsuya-akao/dawn#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@shopify/prettier-plugin-liquid": "^1.9.3",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "prettier-plugin-liquid": "^0.0.1-security",
+    "sass": "^1.89.2",
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1"
+  }
+}

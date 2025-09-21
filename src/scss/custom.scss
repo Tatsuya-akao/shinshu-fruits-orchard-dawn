@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+// Sass変数やMixinを定義
+@use 'global';
+
+// ライブラリ
+@use 'libs';
+
+// コンポーネント
+@use 'components';
+
+// セクション
+@use 'sections';
+
+// スニペット
+@use 'snippets';
+
+@use 'pages';
+
+@use 'utilities';

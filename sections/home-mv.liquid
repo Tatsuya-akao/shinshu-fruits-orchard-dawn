@@ -1,0 +1,83 @@
+{% schema %}
+{
+  "name": "Main Visual",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Main Visual"
+    }
+  ]
+}
+{% endschema %}
+
+<div class='home-mv'>
+  <div class='home-mv__container'>
+    <div class='splide home-mv__slider js-home-mv-slider' aria-label='Main Visual'>
+      <div class='splide__track'>
+        <ul class='splide__list'>
+          <li class='splide__slide'>
+            <img
+              class='home-mv__image'
+              src='{{ 'home-mv-slide-04.png' | asset_url }}'
+              width='1600'
+              height='900'
+              alt='スライド4'
+            >
+          </li>
+          <li class='splide__slide'>
+            <img
+              class='home-mv__image'
+              src='{{ 'home-mv-slide-03.png' | asset_url }}'
+              width='1600'
+              height='900'
+              alt='スライド3'
+            >
+          </li>
+
+          <li class='splide__slide'>
+            <img
+              class='home-mv__image'
+              src='{{ 'home-mv-slide-01.png' | asset_url }}'
+              width='1600'
+              height='900'
+              alt='スライド1'
+            >
+          </li>
+          <li class='splide__slide'>
+            <img
+              class='home-mv__image'
+              src='{{ 'home-mv-slide-02.png' | asset_url }}'
+              width='1600'
+              height='900'
+              alt='スライド2'
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class='home-mv__content'>
+      <div class='home-mv__logo'>
+        {% if settings.logo != blank %}
+          <img
+            class='home-mv__logo-image'
+            src='{{ 'logo-white.svg' | asset_url }}'
+            width='160'
+            height='160'
+            alt='{{ settings.logo.alt | default: shop.name }}'
+          >
+        {% else %}
+          <img
+            class='home-mv__logo-image'
+            src='{{ 'logo-white.svg' | asset_url }}'
+            width='160'
+            height='160'
+            alt='{{ settings.logo.alt | default: shop.name }}'
+          >
+        {% endif %}
+      </div>
+
+      <h2 class='home-mv__title'>新鮮な果物を、農園から直送</h2>
+      <p class='home-mv__text'>収穫したての旬の味を、ご家庭へそのまま。</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+@use '../../global' as *;
+@use './sections/news-content';
+
+.single-news {
+  padding: 8rem 0;
+
+  @include tab-up {
+    padding: 16rem 0;
+  }
+
+  &__header {
+    margin-top: 0 !important;
+  }
+
+  &__btn-wrap {
+    margin: 4rem auto 0;
+    display: flex;
+    justify-content: center;
+
+    @include tab-up {
+      margin-top: 6.4rem;
+    }
+  }
+
+  &__btn {
+    width: 25rem;
+  }
+}

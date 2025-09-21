@@ -1,0 +1,50 @@
+@use '../global' as *;
+
+.parallax-image-section {
+  position: relative;
+  overflow: hidden;
+  height: 24rem;
+
+  @include tab-up {
+    height: 40rem;
+  }
+}
+
+.parallax-image-container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.parallax-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.parallax-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(var(--color-background));
+  border: 2px dashed rgba(var(--color-foreground), 0.3);
+}
+
+.parallax-image-placeholder-content {
+  text-align: center;
+  color: rgba(var(--color-foreground), 0.5);
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .parallax-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

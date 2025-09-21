@@ -1,0 +1,9 @@
+@use '../global' as *;
+
+.u-tab-down {
+  display: block;
+
+  @include tab-up {
+    display: none;
+  }
+}

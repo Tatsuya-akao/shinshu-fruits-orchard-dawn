@@ -1,0 +1,244 @@
+@use '../../../global' as *;
+
+.page-top {
+  .home-history-section {
+    padding: 8rem 0;
+    background-color: $c-black;
+
+    @include tab-up {
+      padding: 16rem 0;
+    }
+  }
+
+  .home-history {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: $c-white;
+
+    &__title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.4rem;
+      margin-bottom: 3.2rem;
+
+      @include tab-up {
+        gap: 2rem;
+        margin-bottom: 8rem;
+      }
+
+      img {
+        width: 3.8rem;
+        filter: brightness(0) invert(1);
+
+        @include tab-up {
+          width: 5rem;
+        }
+      }
+
+      span {
+        font-weight: 500;
+        font-size: 2.2rem;
+        letter-spacing: 0.2em;
+        line-height: 1.5;
+        color: $c-white;
+
+        @include tab-up {
+          font-size: 3.2rem;
+        }
+      }
+    }
+
+    &__thumb {
+      position: relative;
+      width: 100%;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      &::after {
+        content: '';
+        background-image: linear-gradient(to bottom, rgba($c-black, 0.2), rgba($c-black, 0.8));
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+    }
+
+    &__text {
+      display: grid;
+      gap: 2.4rem;
+      margin: 3.2rem auto 0;
+      max-width: 80rem;
+
+      @include tab-up {
+        margin-top: 6.4rem;
+        gap: 4rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+        line-height: 2.5;
+        margin: 0;
+
+        @include tab-up {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    &__btn-wrap {
+      margin: 4rem auto 0;
+      display: flex;
+      justify-content: center;
+
+      @include tab-up {
+        margin-top: 6.4rem;
+      }
+    }
+
+    &__btn {
+      width: 25rem;
+    }
+  }
+
+  .home-history__content {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .home-history__timeline {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(var(--color-foreground), 0.2);
+      transform: translateX(-50%);
+
+      @media (max-width: 768px) {
+        left: 2rem;
+      }
+    }
+  }
+
+  .home-history__item {
+    position: relative;
+    margin-bottom: 6rem;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 4rem;
+    }
+
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+
+      .home-history__year {
+        margin-left: 4rem;
+        margin-right: 0;
+
+        @media (max-width: 768px) {
+          margin-left: 0;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .home-history__description {
+        text-align: right;
+        padding-right: 4rem;
+
+        @media (max-width: 768px) {
+          text-align: left;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &:nth-child(even) {
+      .home-history__year {
+        margin-right: 4rem;
+
+        @media (max-width: 768px) {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .home-history__description {
+        padding-left: 4rem;
+
+        @media (max-width: 768px) {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 1.2rem;
+      height: 1.2rem;
+      background: rgb(var(--color-foreground));
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+
+      @media (max-width: 768px) {
+        left: 2rem;
+        top: 1rem;
+      }
+    }
+  }
+
+  .home-history__year {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(var(--color-foreground));
+    background: rgb(var(--color-background));
+    padding: 1rem 2rem;
+    border: 2px solid rgba(var(--color-foreground), 0.2);
+    border-radius: 3rem;
+    white-space: nowrap;
+  }
+
+  .home-history__description {
+    flex: 1;
+    max-width: 35rem;
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      color: rgb(var(--color-foreground));
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: rgba(var(--color-foreground), 0.8);
+      margin: 0;
+    }
+  }
+}

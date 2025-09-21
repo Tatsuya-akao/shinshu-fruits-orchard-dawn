@@ -1,0 +1,59 @@
+@use '../../../global' as *;
+
+.page-commitment {
+  .commit {
+    &__block {
+      width: 100%;
+      background-color: #fff;
+      padding: 8rem 0;
+
+      &.-gray {
+        background-color: #f0f0f0;
+      }
+
+      @include tab-up {
+        padding: 16rem 0;
+      }
+    }
+
+    &__block-inner {
+      max-width: 100rem;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    &__block-title {
+      text-align: center;
+      font-size: 2.4rem;
+      margin: 0;
+
+      @include tab-up {
+        font-size: 3.2rem;
+      }
+    }
+
+    &__block-img {
+      margin-top: 2.4rem;
+
+      @include tab-up {
+        margin-top: 4rem;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__block-text {
+      margin: 2.4rem auto 0;
+      font-size: 1.4rem;
+
+      @include tab-up {
+        margin-top: 4rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

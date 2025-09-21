@@ -1,0 +1,69 @@
+@use 'sass:math';
+
+// Dawn theme breakpoints
+$sp: 749px;
+$tab: 750px;
+$pc: 990px;
+$pc-l: 1200px;
+
+// Mobile-first approach mixins
+@mixin sp {
+  @media (max-width: $sp) {
+    @content;
+  }
+}
+
+@mixin tab-up {
+  @media (min-width: $tab) {
+    @content;
+  }
+}
+
+@mixin pc-up {
+  @media (min-width: $pc) {
+    @content;
+  }
+}
+
+@mixin pc-l-up {
+  @media (min-width: $pc-l) {
+    @content;
+  }
+}
+
+// Desktop-first approach mixins (for specific cases)
+@mixin pc-down {
+  @media (max-width: ($pc - 1px)) {
+    @content;
+  }
+}
+
+@mixin tab-down {
+  @media (max-width: ($tab - 1px)) {
+    @content;
+  }
+}
+
+// Specific breakpoint ranges
+@mixin tab-only {
+  @media (min-width: $tab) and (max-width: ($pc - 1px)) {
+    @content;
+  }
+}
+
+@mixin pc-only {
+  @media (min-width: $pc) and (max-width: ($pc-l - 1px)) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@function vw($px) {
+  $value: math.div($px, 1440) * 100;
+  @return math.div(round($value * 100), 100) * 1vw;
+}
